@@ -1,0 +1,139 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local TextButton1 = Instance.new("TextButton")
+local infyield2 = Instance.new("TextButton")
+local nameButton3 = Instance.new("TextButton")
+local OrcaButton4 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(246, 117, 255)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.644369185, 0, 0.280645162, 0)
+Frame.Size = UDim2.new(0, 367, 0, 397)
+Frame.Active = true
+Frame.Draggable = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 0.750
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 367, 0, 50)
+TextLabel.Font = Enum.Font.Bangers
+TextLabel.Text = "Goldfish V1"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0, 0, 0.148614615, 0)
+ScrollingFrame.Size = UDim2.new(0, 367, 0, 338)
+
+TextButton1.Name = "TextButton1"
+TextButton1.Parent = ScrollingFrame
+TextButton1.BackgroundColor3 = Color3.fromRGB(133, 235, 255)
+TextButton1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton1.BorderSizePixel = 0
+TextButton1.Position = UDim2.new(0.0190735701, 0, -0.00257665874, 0)
+TextButton1.Size = UDim2.new(0, 146, 0, 48)
+TextButton1.Font = Enum.Font.Cartoon
+TextButton1.Text = "Reset Player"
+TextButton1.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton1.TextScaled = true
+TextButton1.TextSize = 14.000
+TextButton1.TextWrapped = true
+
+infyield2.Name = "infyield2"
+infyield2.Parent = ScrollingFrame
+infyield2.BackgroundColor3 = Color3.fromRGB(133, 235, 255)
+infyield2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+infyield2.BorderSizePixel = 0
+infyield2.Position = UDim2.new(0.0190735701, 0, 0.0741089582, 0)
+infyield2.Size = UDim2.new(0, 146, 0, 48)
+infyield2.Font = Enum.Font.Cartoon
+infyield2.Text = "Run Inf Yield"
+infyield2.TextColor3 = Color3.fromRGB(0, 0, 0)
+infyield2.TextScaled = true
+infyield2.TextSize = 14.000
+infyield2.TextWrapped = true
+infyield2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/infiniteyield/master/source.lua", true))()
+end)
+
+nameButton3.Name = "nameButton3"
+nameButton3.Parent = ScrollingFrame
+nameButton3.BackgroundColor3 = Color3.fromRGB(133, 235, 255)
+nameButton3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+nameButton3.BorderSizePixel = 0
+nameButton3.Position = UDim2.new(0.0190735701, 0, 0.155290589, 0)
+nameButton3.Size = UDim2.new(0, 146, 0, 48)
+nameButton3.Font = Enum.Font.Cartoon
+nameButton3.Text = "Nameless admin"
+nameButton3.TextColor3 = Color3.fromRGB(0, 0, 0)
+nameButton3.TextScaled = true
+nameButton3.TextSize = 14.000
+nameButton3.TextWrapped = true
+nameButton3.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua"))();
+end)
+
+OrcaButton4.Name = "OrcaButton4"
+OrcaButton4.Parent = ScrollingFrame
+OrcaButton4.BackgroundColor3 = Color3.fromRGB(133, 235, 255)
+OrcaButton4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrcaButton4.BorderSizePixel = 0
+OrcaButton4.Position = UDim2.new(0.498637617, 0, -0.00804418046, 0)
+OrcaButton4.Size = UDim2.new(0, 146, 0, 48)
+OrcaButton4.Font = Enum.Font.Cartoon
+OrcaButton4.Text = "Orca admin"
+OrcaButton4.TextColor3 = Color3.fromRGB(0, 0, 0)
+OrcaButton4.TextScaled = true
+OrcaButton4.TextSize = 14.000
+OrcaButton4.TextWrapped = true
+OrcaButton4.MouseButton1Down:connect(function()
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+end)
+-- Scripts:
+
+local function PUBXMTQ_fake_script() -- TextButton1.ResetPlayerOnClick 
+	local script = Instance.new('LocalScript', TextButton1)
+
+	local Players = game:GetService("Players")
+	local button = script.Parent
+	
+	local function resetPlayer(player)
+	    if player and player.Character then
+	        local character = player.Character
+	        local humanoid = character:FindFirstChildOfClass("Humanoid")
+	        if humanoid then
+	            humanoid.Health = 0
+	        end
+	    end
+	end
+	
+	button.MouseButton1Click:Connect(function()
+	    local player = Players.LocalPlayer
+	    resetPlayer(player)
+	end)
+end
+coroutine.wrap(PUBXMTQ_fake_script)()
